@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docs hub — NREL Lab website</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    :root{
+      --navy:#1a2332; --navy-d:#162030; --gold:#82603a; --cream:#faf4ec;
+      --ring:#eadfcb; --paper:#fff; --ink:#1a2332; --mid:#565f70; --dim:#8b91a0;
+      --font:'Pretendard Variable',Pretendard,system-ui,sans-serif;
+      --mono:ui-monospace,'Cascadia Code',Consolas,monospace;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--cream);color:var(--ink);font-family:var(--font);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .rule{height:3px;background:linear-gradient(90deg,var(--gold),#a17c4e,var(--gold))}
+    header.top{background:linear-gradient(160deg,#1e2a3d,var(--navy-d));color:var(--cream);padding:2.6rem 1.5rem}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 1.5rem}
+    header.top .wrap{padding:0}
+    .kick{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#c8a877}
+    header.top h1{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin:.6rem 0 .5rem}
+    header.top p{color:#b9c0cf;max-width:60ch}
+    header.top .back{display:inline-block;margin-top:1.2rem;font-weight:600;font-size:.9rem;color:var(--cream);border:1px solid rgba(250,244,236,.28);border-radius:999px;padding:.5rem 1rem}
+    header.top .back:hover{background:rgba(250,244,236,.08)}
+    main{padding:2.5rem 0 3.5rem}
+    h2.sec{font-size:1.3rem;font-weight:800;color:var(--navy);margin:2.4rem 0 1rem}
+    h2.sec:first-child{margin-top:0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+    .card{background:var(--paper);border:1px solid var(--ring);border-top:3px solid var(--gold);border-radius:12px;padding:1.2rem 1.3rem 1.3rem;transition:transform .25s,box-shadow .25s;display:block}
+    .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -28px rgba(26,35,50,.45)}
+    .pill{display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;font-weight:700;padding:.12rem .45rem;border-radius:5px;margin-bottom:.6rem}
+    .pill.md{background:rgba(130,96,58,.12);color:var(--gold)}
+    .pill.html{background:var(--navy);color:var(--cream)}
+    .card h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.35rem}
+    .card p{font-size:.9rem;color:var(--mid)}
+    footer{max-width:1000px;margin:0 auto;padding:1.5rem;border-top:1px solid var(--ring);color:var(--dim);font-size:.8rem}
+  </style>
+</head>
+<body>
+  <div class="rule"></div>
+  <header class="top">
+    <div class="wrap">
+      <p class="kick">NREL Lab website · documentation</p>
+      <h1>Docs hub</h1>
+      <p>Everything you need to run, edit, and extend the site — plus links to the live pages. Start with the guide, then dig into the reference docs.</p>
+      <a class="back" href="../index.html">← Open the live site</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h2 class="sec">Start here</h2>
+    <div class="grid">
+      <a class="card" href="_view.html?p=../CLAUDE.md"><span class="pill md">MD</span><h3>CLAUDE.md</h3><p>Entry point — what the site is, how to run it, and the rules you must not break.</p></a>
+      <a class="card" href="_view.html?p=../ROADMAP.md"><span class="pill md">MD</span><h3>ROADMAP.md</h3><p>Planned improvements: full publication list, research figures, i18n, deploy, and more.</p></a>
+      <a class="card" href="_view.html?p=index.md"><span class="pill md">MD</span><h3>Docs catalog</h3><p>The full list of documentation with one-line summaries.</p></a>
+    </div>
+
+    <h2 class="sec">Reference</h2>
+    <div class="grid">
+      <a class="card" href="_view.html?p=ARCHITECTURE.md"><span class="pill md">MD</span><h3>Architecture</h3><p>File map, how pages share nav/footer, CSS + JS responsibilities.</p></a>
+      <a class="card" href="_view.html?p=CONTENT-GUIDE.md"><span class="pill md">MD</span><h3>Content guide</h3><p>Add a publication, member, or news item; update metrics and the chart.</p></a>
+      <a class="card" href="_view.html?p=DESIGN.md"><span class="pill md">MD</span><h3>Design system</h3><p>Palette, type, the citation-spectrum signature, accessibility.</p></a>
+      <a class="card" href="_view.html?p=DATA-SOURCES.md"><span class="pill md">MD</span><h3>Data sources</h3><p>Provenance of every fact, with source URLs and the July 2026 snapshot date.</p></a>
+      <a class="card" href="_view.html?p=DEPLOY.md"><span class="pill md">MD</span><h3>Deploy</h3><p>Hosting options — GitHub Pages, Netlify, any static host.</p></a>
+      <a class="card" href="_view.html?p=log.md"><span class="pill md">MD</span><h3>Build log</h3><p>Append-only history of what changed and when.</p></a>
+    </div>
+
+    <h2 class="sec">Live pages</h2>
+    <div class="grid">
+      <a class="card" href="../index.html"><span class="pill html">HTML</span><h3>Home</h3><p>Hero, citation chart, lab intro, research + news previews.</p></a>
+      <a class="card" href="../team.html"><span class="pill html">HTML</span><h3>Team</h3><p>PI bio, current members (with photos), alumni, and join us — four in-page tabs.</p></a>
+      <a class="card" href="../research.html"><span class="pill html">HTML</span><h3>Research</h3><p>Six research directions, each a detailed section.</p></a>
+      <a class="card" href="../publications.html"><span class="pill html">HTML</span><h3>Publications</h3><p>Most-cited highlights + list by year.</p></a>
+      <a class="card" href="../news.html"><span class="pill html">HTML</span><h3>News</h3><p>Press highlights, most recent first.</p></a>
+      <a class="card" href="../contact.html"><span class="pill html">HTML</span><h3>Contact</h3><p>Address, email, phone, and how to join the lab.</p></a>
+    </div>
+  </main>
+
+  <footer>© 2026 NREL Lab website · showcase · docs render best when the folder is served over a local HTTP server (<code>python -m http.server</code>).</footer>
+</body>
+</html>
