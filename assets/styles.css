@@ -239,11 +239,11 @@ sub { font-size: .72em; }
 .member-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .mcard { background: var(--paper); border: 1px solid var(--cream-ring); border-radius: var(--radius); padding: 1.2rem 1.2rem 1.3rem; transition: transform .28s var(--ease), box-shadow .28s; }
 .mcard:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -28px rgba(26,35,50,.4); }
-.mcard-top { display: flex; align-items: center; gap: .8rem; margin-bottom: .8rem; }
-.mavatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-mono); font-weight: 700; font-size: .95rem; color: var(--cream); background: linear-gradient(140deg, var(--navy-light), var(--navy)); flex: 0 0 auto; }
+.mcard-top { display: flex; flex-direction: column; align-items: center; text-align: center; gap: .7rem; margin-bottom: .9rem; }
+.mavatar { width: 100%; aspect-ratio: 4 / 5; border-radius: calc(var(--radius) - 6px); display: grid; place-items: center; font-family: var(--font-mono); font-weight: 700; font-size: 1.6rem; color: var(--cream); background: linear-gradient(140deg, var(--navy-light), var(--navy)); flex: 0 0 auto; }
 .mavatar.pd { background: linear-gradient(140deg, var(--gold), #6d4f2e); }
-.mname { display: block; font-weight: 700; color: var(--navy); font-size: .98rem; line-height: 1.2; }
-.mrole { display: block; font-family: var(--font-mono); font-size: .68rem; color: var(--ink-dim); margin-top: .2rem; }
+.mname { display: block; font-weight: 700; color: var(--navy); font-size: 1.02rem; line-height: 1.25; }
+.mrole { display: block; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-dim); margin-top: .25rem; }
 .mint { font-size: .86rem; color: var(--ink-mid); }
 .mint-label { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: .15rem; }
 
@@ -392,7 +392,7 @@ sub { font-size: .72em; }
 #tab-alumni:focus-visible ~ .team-tab-bar label[for="tab-alumni"],
 #tab-join:focus-visible ~ .team-tab-bar label[for="tab-join"] { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
 
-.mphoto { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 1px solid var(--cream-ring); }
+.mphoto { width: 100%; aspect-ratio: 4 / 5; border-radius: calc(var(--radius) - 6px); object-fit: cover; flex: 0 0 auto; border: 1px solid var(--cream-ring); }
 .member-group { margin-bottom: clamp(2.4rem, 5vw, 3.4rem); }
 .member-group:last-child { margin-bottom: 0; }
 .member-group h3 { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
