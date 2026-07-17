@@ -50,7 +50,15 @@ Researcher / Ph.D. Students / M.S. Students / External Collaborators), and copy 
 ```html
 <article class="mcard">
   <div class="mcard-top">
-    <img class="mphoto" src="assets/img/members/firstname-lastname.jpg" alt="Given Name Family" />
+    <div class="mphoto-wrap" tabindex="0">
+      <img class="mphoto" src="assets/img/members/firstname-lastname.jpg" alt="Given Name Family" />
+      <div class="mreveal">
+        <p class="mreveal-line"><span class="mreveal-label">Previous degree</span>B.S., Department, University</p>
+        <p class="mreveal-line"><span class="mreveal-label">Stage</span>Ph.D–M.S.</p>
+        <p class="mreveal-line"><span class="mreveal-label">Year</span>1st year</p>
+        <p class="mreveal-line"><span class="mreveal-label">Research</span>Displays</p>
+      </div>
+    </div>
     <span><span class="mname">Given Name Family</span><span class="mrole">Ph.D–M.S. · 1st year</span></span>
   </div>
   <p class="mint"><span class="mint-label">Research</span>Displays</p>
@@ -59,7 +67,15 @@ Researcher / Ph.D. Students / M.S. Students / External Collaborators), and copy 
 
 Save the photo (square crop, ~360×360, optimized) to `assets/img/members/`. If there's no
 photo yet, use the initials-avatar pattern instead: `<span class="mavatar" aria-hidden="true">GF</span>`
-(add `class="mavatar pd"` for a postdoc — gold instead of navy).
+(add `class="mavatar pd"` for a postdoc — gold instead of navy) — skip `.mphoto-wrap`/`.mreveal`
+for avatar-only cards, there's no photo to fade out.
+
+The `.mphoto-wrap` fades the photo out on hover/focus and fades in `.mreveal` in its place
+(CSS-only, `:hover`/`:focus-within`, `assets/styles.css`) — `tabindex="0"` makes it reachable
+by keyboard. Only include a `.mreveal-line` for facts that actually come from the lab
+homepage's `/member` page (previous degree + school, stage, year in program, research area);
+never invent one. External collaborators' previous degree isn't listed there, so their reveal
+only has Stage + Affiliation — see `DATA-SOURCES.md`.
 
 ## Add a figure to a publication, news item, or highlight
 

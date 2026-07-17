@@ -80,6 +80,20 @@ Append-only. Newest last.
   sanity pass; the other 11 look correctly matched. Updated `DATA-SOURCES.md`'s caveat
   with this correction.
 
+## 2026-07-18 — hover/focus reveal on member photos (previous degree, stage, year, research)
+
+- **Feedback:** hovering a current member's photo on the Team page should fade the photo out
+  and show their previous degree (+ school), stage, year in program, and research area in its
+  place.
+- Fetched each current member's previous degree/school from the lab homepage's `/member` page
+  (not previously captured — see `DATA-SOURCES.md`). The three external collaborators don't
+  list one there, so their reveal shows Stage + Affiliation only, nothing invented.
+- Added `.mphoto-wrap`/`.mreveal` (CSS-only `:hover`/`:focus-within` fade, `assets/styles.css`)
+  and wired it into all 15 current-member/collaborator cards in `team.html`; `tabindex="0"`
+  keeps it keyboard-reachable, and the reveal text stays in the accessibility tree even when
+  visually faded out. No JS needed — works with JS disabled. Updated `CONTENT-GUIDE.md`'s
+  "Add a member" recipe and `DATA-SOURCES.md` to match.
+
 ## Template for future entries
 
 ```

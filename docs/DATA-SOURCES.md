@@ -12,6 +12,7 @@ showcase site, not the official lab site. Numbers drift — keep this table and 
 | Lab homepage | `sites.google.com/view/yhkimlab` | Lab name/description, PI bio, education, appointments, honors, editorial service, research descriptions, member list, news, recent publications |
 | Lab homepage — images | same, `/prof-kim` and `/home` | PI portrait (`prof-kim.png`), NREL logo (`nrel-logo.png`) |
 | Lab homepage — member images | `/member` | 15 current-member/collaborator portraits in `assets/img/members/`, captured 2026-07-16 |
+| Lab homepage — member previous degree | `/member` | Each current member's previous degree + school, fetched 2026-07-18, shown in `team.html`'s hover/focus reveal on each photo (`.mphoto-wrap`/`.mreveal`) |
 | Lab homepage — alumni | `/member/alumni` | The 3 listed alumni (names, degrees, current positions) |
 | Lab homepage — publication figures | `/publication` and `/publication/2021-before-hyu` | 26 figures/covers in `assets/img/publications/`, captured 2026-07-17 |
 | Lab homepage — news photos | `/news` | 13 photos/figures in `assets/img/news/`, captured 2026-07-17 |
@@ -69,6 +70,10 @@ whatever it showed that day, not necessarily exhaustive of everyone who has ever
   pair so the filenames (`phd-hyundo.jpg`, `ms-eunjijang.jpg`, `phd-hyerinshin.jpg`,
   `ms-seunghyunjae.jpg`) keep matching the right face. The other 11 photos were re-checked
   against their names' gender and look correctly matched.
+- **The three external collaborators' previous degree isn't listed** on the lab homepage's
+  `/member` page (only their current stage, institute, and research group are). Their photo
+  hover/focus reveal shows Stage + Affiliation only — don't add a fabricated previous-degree
+  line for them.
 - The lab is unrelated to (but shares its acronym with) the U.S. National Renewable Energy
   Laboratory, where Prof. Kim did his postdoc. The site notes this.
 - Some very recent papers on the homepage are "in press"; venues/years were transcribed as

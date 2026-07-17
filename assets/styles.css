@@ -392,7 +392,14 @@ sub { font-size: .72em; }
 #tab-alumni:focus-visible ~ .team-tab-bar label[for="tab-alumni"],
 #tab-join:focus-visible ~ .team-tab-bar label[for="tab-join"] { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
 
-.mphoto { width: 100%; aspect-ratio: 4 / 5; border-radius: calc(var(--radius) - 6px); object-fit: cover; flex: 0 0 auto; border: 1px solid var(--cream-ring); }
+.mphoto { width: 100%; aspect-ratio: 4 / 5; border-radius: calc(var(--radius) - 6px); object-fit: cover; flex: 0 0 auto; display: block; transition: opacity .25s var(--ease); }
+.mphoto-wrap { position: relative; width: 100%; flex: 0 0 auto; border-radius: calc(var(--radius) - 6px); border: 1px solid var(--cream-ring); overflow: hidden; }
+.mphoto-wrap:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.mreveal { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: .6rem; padding: 1rem; background: linear-gradient(150deg, var(--navy-light), var(--navy)); opacity: 0; transition: opacity .25s var(--ease); text-align: left; }
+.mphoto-wrap:hover .mphoto, .mphoto-wrap:focus-visible .mphoto, .mphoto-wrap:focus-within .mphoto { opacity: 0; }
+.mphoto-wrap:hover .mreveal, .mphoto-wrap:focus-visible .mreveal, .mphoto-wrap:focus-within .mreveal { opacity: 1; }
+.mreveal-line { font-size: .76rem; line-height: 1.4; color: var(--cream); }
+.mreveal-label { display: block; font-family: var(--font-mono); font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; color: #c8a877; margin-bottom: .12rem; }
 .member-group { margin-bottom: clamp(2.4rem, 5vw, 3.4rem); }
 .member-group:last-child { margin-bottom: 0; }
 .member-group h3 { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
