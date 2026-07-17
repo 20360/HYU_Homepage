@@ -405,6 +405,11 @@ sub { font-size: .72em; }
 .member-group h3 { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
 .alum-meta { font-size: .84rem; color: var(--ink-mid); margin-top: .3rem; line-height: 1.55; }
 .alum-meta .now { color: var(--navy); font-weight: 600; }
+.alum-contrib { margin-top: .7rem; }
+.alum-contrib-label { display: block; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
+.alum-contrib ul { list-style: none; display: flex; flex-direction: column; gap: .3rem; }
+.alum-contrib li { position: relative; padding-left: 1rem; font-size: .78rem; line-height: 1.4; color: var(--ink-mid); }
+.alum-contrib li::before { content: ''; position: absolute; left: 0; top: .55em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
 .join-note { color: var(--ink-mid); font-size: .92rem; margin-top: 1rem; }
 
 /* ---------- Figure galleries (publications / news / highlights) ---------- */

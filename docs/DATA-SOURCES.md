@@ -13,7 +13,7 @@ showcase site, not the official lab site. Numbers drift — keep this table and 
 | Lab homepage — images | same, `/prof-kim` and `/home` | PI portrait (`prof-kim.png`), NREL logo (`nrel-logo.png`) |
 | Lab homepage — member images | `/member` | 15 current-member/collaborator portraits in `assets/img/members/`, captured 2026-07-16 |
 | Lab homepage — member previous degree | `/member` | Each current member's previous degree + school, fetched 2026-07-18, shown in `team.html`'s hover/focus reveal on each photo (`.mphoto-wrap`/`.mreveal`) |
-| Lab homepage — alumni | `/member/alumni` | The 3 listed alumni (names, degrees, current positions) |
+| Lab homepage — alumni | `/member/alumni` | The 3 listed alumni (names, degrees, current positions), their portraits (captured 2026-07-18), and their per-person "Contribution" list (papers, from a Google Sites popup on that page) |
 | Lab homepage — publication figures | `/publication` and `/publication/2021-before-hyu` | 26 figures/covers in `assets/img/publications/`, captured 2026-07-17 |
 | Lab homepage — news photos | `/news` | 13 photos/figures in `assets/img/news/`, captured 2026-07-17 |
 | Lab homepage — highlights photos | `/highlights` | 35 photos in `assets/img/highlights/`, captured 2026-07-17 (one representative photo per dated entry; entries with dot-carousels on the source page may have more photos than were captured) |
@@ -43,17 +43,31 @@ Per-year citations used in the chart: 2015: 156 · 2016: 454 · 2017: 849 · 201
 - Contact: younghoonkim@hanyang.ac.kr · +82-2-2220-2393 · Fusion Tech Center 921, 222
   Wangsimni-ro, Seongdong-gu, Seoul 04763.
 
-## Alumni (from the lab homepage's Alumni page, captured 2026-07-16)
+## Alumni (from the lab homepage's Alumni page, captured 2026-07-16; photos + contributions 2026-07-18)
 
-- **Dr. Jong Gyu Oh** — Ph.D., Dept. of Energy Engineering, HYU (EEDL); postdoc 2023.07–2023.12;
-  now Staff Engineer, Samsung Electronics.
-- **Dr. Daseul Lee** — Ph.D., Dept. of Nano Fusion Technology, Pusan National University; with
-  the group 2023.09–2026.06; now Researcher, DGIST (Innocore). Also a co-author on several
-  2024–2026 papers (see `publications.html`).
-- **Serim Cho** — B.S., Dept. of Energy Engineering, HYU, 2023; now at Samsung Display.
+The homepage groups alumni by the stage they held **at this lab**, not by their highest
+degree — `team.html`'s Alumni tab mirrors that: **Postdoc Alumni** (Oh, Lee) and
+**Undergraduate Alumni** (Cho). Their `.mrole` reflects the lab stage; `.alum-meta` keeps
+their actual (possibly higher/different) degree.
+
+- **Dr. Jong Gyu Oh** — postdoc 2023.07–2023.12; Ph.D., Dept. of Energy Engineering, HYU
+  (EEDL); now Staff Engineer, Samsung Electronics. Lab contribution: J. Am. Chem. Soc. 146,
+  22, 15045–15052 (2024) — the same paper as `pub-2024-jacs-chiral-pd-halide.jpg` in
+  `publications.html`.
+- **Dr. Daseul Lee** — postdoc 2023.09–2026.06; Ph.D., Dept. of Nano Fusion Technology, Pusan
+  National University; now Researcher, DGIST (Innocore). Lab contribution: Nano Energy 151,
+  111800 (2026); ACS Applied Optical Materials 3, 2681–2689 (2025); Advanced Science, e13328
+  (2025); Advanced Electronic Materials, 2400525 (2025). The first two match `pub-102-...` and
+  a paper referenced in `publications.html`; also a co-author on other 2024–2026 papers there.
+- **Serim Cho** — undergraduate 2023; B.S., Dept. of Energy Engineering, HYU; now at Samsung
+  Display. Lab contribution: Microstructure 5, 2025054 (2025).
 
 The homepage's Alumni page listed only these three at capture time — treat the list as
 whatever it showed that day, not necessarily exhaustive of everyone who has ever left the lab.
+Each person's "Contribution" list came from a **Google Sites collapsible popup** on that page
+(a "Contribution" button next to their entry) — it's not in the page's plain rendered text,
+so it's easy to miss on a normal fetch; you have to click it (or render with a headless
+browser and click programmatically) to see the paper list.
 
 ## Caveats
 

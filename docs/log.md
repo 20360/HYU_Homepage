@@ -94,6 +94,28 @@ Append-only. Newest last.
   visually faded out. No JS needed — works with JS disabled. Updated `CONTENT-GUIDE.md`'s
   "Add a member" recipe and `DATA-SOURCES.md` to match.
 
+## 2026-07-18 — alumni photos, split by lab stage, and their lab contributions
+
+- **Feedback:** bring alumni photos over from the lab homepage's Alumni page like the current
+  members already have; Dr. Jong Gyu Oh and Dr. Daseul Lee only held a **postdoc** position at
+  this lab (their Ph.D.s are from elsewhere), and Serim Cho was only an **undergraduate** here
+  — split the Alumni tab into two groups instead of one flat "Lab Alumni" list; also bring over
+  the "Contribution" info from the old Google Site.
+- Captured all 3 alumni portraits via headless Playwright (same `sitesv-images-rt`
+  token-bound-URL constraint as other images), cropped/resized to 360×360 to match current
+  members, saved as `assets/img/members/alumni-{jonggyuoh,daseullee,serimcho}.jpg`. Swapped
+  their `.mavatar` initials for real `<img class="mphoto">`.
+- Split `#panel-alumni` into **Postdoc Alumni** (Oh, Lee) and **Undergraduate Alumni** (Cho)
+  `.member-group`s, matching the lab homepage's own grouping. Changed their `.mrole` from
+  "Ph.D. · dates" to "Postdoc · dates" (and Cho's to "Undergraduate · 2023") since `.mrole` is
+  the stage *at this lab*; `.alum-meta` keeps their actual degree (Ph.D./B.S.) unchanged.
+- The "Contribution" data wasn't in the alumni page's normal rendered text — it's behind a
+  per-person "Contribution" button that opens a Google Sites popup, only reachable by
+  rendering the page and clicking it. Added a new `.alum-contrib` list (paper citations) to
+  each alumni card from that popup; see `DATA-SOURCES.md` for the exact source and how one of
+  Oh's and two of Lee's contributions cross-check against existing `publications.html` entries.
+- Updated `CONTENT-GUIDE.md`'s "Add an alumnus" recipe and `DATA-SOURCES.md` to match.
+
 ## Template for future entries
 
 ```

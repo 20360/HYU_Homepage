@@ -108,14 +108,32 @@ card in `highlights.html` and add a new one (newest first) with date + caption i
 
 ## Add an alumnus
 
-Open `team.html`, `#panel-alumni`, and copy an existing card in the `.member-group`:
+Open `team.html`, `#panel-alumni`. There are two `.member-group`s — **Postdoc Alumni** and
+**Undergraduate Alumni** — grouped by the stage they held *at this lab* (not their highest
+degree; e.g. someone with a Ph.D. from elsewhere who joined as a postdoc goes under Postdoc
+Alumni, with "Ph.D." staying in `.alum-meta` as their degree). Add a new `.member-group` if a
+new stage appears (e.g. M.S. Alumni). Copy an existing card:
 
 ```html
 <article class="mcard">
-  <div class="mcard-top"><span class="mavatar" aria-hidden="true">GF</span><span><span class="mname">Given Name Family</span><span class="mrole">Ph.D. · 2022–2025</span></span></div>
+  <div class="mcard-top">
+    <img class="mphoto" src="assets/img/members/alumni-firstlast.jpg" alt="Given Name Family" />
+    <span><span class="mname">Given Name Family</span><span class="mrole">Postdoc · 2022–2025</span></span>
+  </div>
   <p class="alum-meta">Degree, Department, Institution<br /><span class="now">Now: current position</span></p>
+  <div class="alum-contrib"><p class="alum-contrib-label">Lab contribution</p><ul>
+    <li>Journal Name, vol, page/article (year)</li>
+  </ul></div>
 </article>
 ```
+
+Save the photo the same way as a current member's (square crop, ~360×360, optimized) to
+`assets/img/members/`, prefixed `alumni-` to keep it distinct from current-member filenames.
+The `.alum-contrib` list comes from the lab homepage's `/member/alumni` page's per-person
+**"Contribution"** button (a Google Sites popup — not visible in the page's plain text, click
+it). Omit the whole `.alum-contrib` block if that popup lists nothing. If there's no photo
+yet, fall back to the initials-avatar pattern: `<span class="mavatar" aria-hidden="true">GF</span>`
+(`class="mavatar pd"` for a postdoc — gold instead of navy).
 
 ## Add a news item
 
