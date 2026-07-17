@@ -13,6 +13,9 @@ showcase site, not the official lab site. Numbers drift — keep this table and 
 | Lab homepage — images | same, `/prof-kim` and `/home` | PI portrait (`prof-kim.png`), NREL logo (`nrel-logo.png`) |
 | Lab homepage — member images | `/member` | 15 current-member/collaborator portraits in `assets/img/members/`, captured 2026-07-16 |
 | Lab homepage — alumni | `/member/alumni` | The 3 listed alumni (names, degrees, current positions) |
+| Lab homepage — publication figures | `/publication` and `/publication/2021-before-hyu` | 26 figures/covers in `assets/img/publications/`, captured 2026-07-17 |
+| Lab homepage — news photos | `/news` | 13 photos/figures in `assets/img/news/`, captured 2026-07-17 |
+| Lab homepage — highlights photos | `/highlights` | 35 photos in `assets/img/highlights/`, captured 2026-07-17 (one representative photo per dated entry; entries with dot-carousels on the source page may have more photos than were captured) |
 
 ## Key figures (as of July 2026)
 
@@ -60,6 +63,12 @@ whatever it showed that day, not necessarily exhaustive of everyone who has ever
   Google Sites HTML). Two of fifteen (the last two external collaborators) were independently
   confirmed by proximity in the raw HTML; the rest follow the same listed order (postdoc → PhD
   → M.S. → collaborators) as a best effort. If a face and a name look mismatched, flag it.
+  **Update 2026-07-18:** exactly that happened — Hyun Do's and Eun-Ji Jang's photos were swapped
+  with each other, and Hyerin Shin's and Seung Hyun Jae's photos were swapped with each other
+  (a gender mismatch made it visible). Corrected by swapping the image bytes back between each
+  pair so the filenames (`phd-hyundo.jpg`, `ms-eunjijang.jpg`, `phd-hyerinshin.jpg`,
+  `ms-seunghyunjae.jpg`) keep matching the right face. The other 11 photos were re-checked
+  against their names' gender and look correctly matched.
 - The lab is unrelated to (but shares its acronym with) the U.S. National Renewable Energy
   Laboratory, where Prof. Kim did his postdoc. The site notes this.
 - Some very recent papers on the homepage are "in press"; venues/years were transcribed as
@@ -68,6 +77,21 @@ whatever it showed that day, not necessarily exhaustive of everyone who has ever
 ## How the images were captured
 
 The homepage images are served from token-bound `sitesv-images-rt` URLs that return an HTML
-wrapper to `curl`. They were captured by rendering the page in a headless browser and taking
-an **element screenshot** of the `<img>` (see `ROADMAP.md` items 2–3 for repeating this on the
-research figures and member photos).
+wrapper to `curl`. They were captured by rendering the page in a headless browser (Playwright)
+and taking **element/region screenshots**, same technique as the PI portrait, logo, and member
+photos. See `ROADMAP.md` item 2 for repeating this on the Research page figures.
+
+Two provenance caveats specific to the publications/news/highlights images (2026-07-17 capture):
+
+- **Publication figures were matched to their paper by page position, not an explicit label.**
+  The lab's publication page renders each entry's number and its figure in a strict,
+  verified 1-to-1 descending order (paper 113 down to 58 each have exactly one figure; 116–114
+  and everything before 58 have none) — matched and spot-checked figure-by-figure against the
+  visible paper number and title. The two Advanced Materials cover images used for the 2015
+  and 2018 highlight papers came from a separate "featured covers" strip at the top of the
+  page (not the numbered list) and were matched by the print date visible on the cover; flag
+  it if a cover ever looks mismatched to its paper.
+- **Highlights entries can have more photos than were captured.** The source Highlights page
+  shows a photo carousel (dot pagination) for many entries; only the first/visible photo was
+  captured per entry, so `highlights.html` shows one representative photo per entry rather
+  than the full carousel.

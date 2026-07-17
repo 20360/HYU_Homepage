@@ -11,13 +11,16 @@ ships as a complete 6-page site.
 
 ## 1. Full 116-publication list (Publications page)
 
-- **Why:** `publications.html` now shows most-cited highlights + selected 2026/2025 papers.
-  A complete, year-grouped list of all 116 papers is more authoritative.
+- **Why:** `publications.html` now shows most-cited highlights + selected 2026/2025 papers
+  (each with a figure — see item 2026-07-17 in `docs/log.md`). A complete, year-grouped list
+  of all 116 papers is more authoritative.
 - **How:** The full list already exists on the lab homepage
-  (`sites.google.com/view/yhkimlab/publication`). Scrape it (headless browser, the site is
-  JS-rendered), parse into `{num, authors, title, venue, year}`, and generate the `.pub-simple`
-  year groups. Keep highlights (with citation counts) at the top. Cross-check titles against
-  Google Scholar; never paraphrase a title.
+  (`sites.google.com/view/yhkimlab/publication`, plus `/publication/2021-before-hyu` for
+  pre-2021 papers). Scrape it (headless browser, the site is JS-rendered), parse into
+  `{num, authors, title, venue, year}`, and generate the `.pub-simple` year groups. Keep
+  highlights (with citation counts) at the top. Cross-check titles against Google Scholar;
+  never paraphrase a title. Figures for papers 58–113 are already captured in
+  `assets/img/publications/` if you extend the list into that range.
 
 ## 2. Research figures
 
@@ -35,6 +38,17 @@ Real portraits for the postdoc, all 11 grad students, and the 3 external collabo
 `assets/img/members/` (360×360, optimized, ~12–16 KB each) and wired into `team.html`'s
 Current Members tab. Alumni still use initials avatars (no source photos captured yet) — a
 small follow-up if that matters.
+
+## 3b. Full photo carousels on the Highlights page — ✅ mostly done (2026-07-17)
+
+- **Why:** `highlights.html` and its `assets/img/highlights/` photos are new (see
+  `docs/log.md`). The source Highlights page shows a photo carousel (dot pagination) for many
+  entries; only the first/visible photo was captured per entry to keep the capture pass
+  tractable.
+- **How (if you want the rest):** Re-open each entry's carousel in a headless browser, click
+  through the dot pagination, and screenshot each additional slide. Add them as extra
+  `.gallery-item` links inside that entry's `.gallery` (see `CONTENT-GUIDE.md`) — the lightbox
+  groups them automatically, no JS change needed.
 
 ## 4. Korean / English toggle
 

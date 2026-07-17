@@ -26,7 +26,7 @@ when the folder is served over a local HTTP server.
 
 ## One-line orientation
 
-- The site is **static HTML/CSS/JS**, 6 pages, no build step.
+- The site is **static HTML/CSS/JS**, 7 pages, no build step.
 - It matches the **REAL Lab brand** (cream + navy + gold), light theme.
 - All data is a **public July 2026 snapshot** (Google Scholar + the lab's homepage).
 - The **home hero citation chart** is the signature — keep it.

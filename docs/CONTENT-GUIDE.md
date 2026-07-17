@@ -61,6 +61,35 @@ Save the photo (square crop, ~360×360, optimized) to `assets/img/members/`. If 
 photo yet, use the initials-avatar pattern instead: `<span class="mavatar" aria-hidden="true">GF</span>`
 (add `class="mavatar pd"` for a postdoc — gold instead of navy).
 
+## Add a figure to a publication, news item, or highlight
+
+Every figure is a plain link wrapped in `.gallery` — this is what makes it work with JS
+disabled (the browser just opens the image) and gives the lightbox something to enhance
+with JS on. Save the image to the matching folder (`assets/img/publications/`,
+`assets/img/news/`, or `assets/img/highlights/`), then add:
+
+**Single image** — publications by-year list (add `class="has-thumb"` to the `<li>`):
+```html
+<li class="has-thumb"><span class="pnum">117</span><span>…</span>
+  <div class="pub-thumb"><div class="gallery">
+    <a class="gallery-item" href="assets/img/publications/pub-117-example.jpg" data-caption="Journal, Year.">
+      <img src="assets/img/publications/pub-117-example.jpg" alt="Describe the figure" loading="lazy" />
+    </a>
+  </div></div>
+</li>
+```
+Publications *highlights* (`.pub`) use the same `.pub-thumb` block as a 4th child alongside
+`.pub-main`/`.pub-cite`. News items use `.news-thumb` instead of `.pub-thumb` and need
+`class="has-gallery"` on the `<li class="news-item">`.
+
+**Multiple images (2+)** — add more `.gallery-item` links inside the same `.gallery`; the
+first one is the representative image (put a `<span class="gallery-badge">+N</span>` inside
+its `<a>`, after the `<img>`, where N = the *other* images' count). The lightbox groups every
+`.gallery-item` sharing one `.gallery` ancestor automatically — no JS config needed.
+
+**Highlights page** — each `.hl-card` is its own `.gallery`; follow the pattern of an existing
+card in `highlights.html` and add a new one (newest first) with date + caption in `.hl-card-body`.
+
 ## Add an alumnus
 
 Open `team.html`, `#panel-alumni`, and copy an existing card in the `.member-group`:

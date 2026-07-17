@@ -4,7 +4,7 @@ How the NREL Lab showcase site is put together.
 
 ## Overview
 
-A hand-built static site: 6 HTML pages that each `<link>` one stylesheet and `<script>` one
+A hand-built static site: 7 HTML pages that each `<link>` one stylesheet and `<script>` one
 JS file. No framework, no bundler, no `node_modules`. Fonts come from a CDN. Everything a
 browser needs is in the `YH/` folder.
 
@@ -13,13 +13,15 @@ YH/
 ├── index.html          Home
 ├── team.html           Team — PI, current members, alumni, join us (4 CSS-only tabs)
 ├── research.html       Research
-├── publications.html   Publications
-├── news.html           News
+├── publications.html   Publications — highlights + by-year list, each with a figure
+├── highlights.html     Highlights — lab life: awards, conferences, graduations, with photos
+├── news.html           News — press highlights, each with a photo/figure
 ├── contact.html        Contact
 ├── assets/
 │   ├── styles.css      All CSS
-│   ├── main.js         All JS
-│   └── img/            prof-kim.png, nrel-logo.png, members/ (15 portraits)
+│   ├── main.js         All JS, including the figure-gallery lightbox
+│   └── img/            prof-kim.png, nrel-logo.png, members/ (15), publications/ (26),
+│                        news/ (13), highlights/ (35)
 ├── docs/               This documentation
 ├── CLAUDE.md           Contributor/agent guide
 ├── ROADMAP.md          Planned work
@@ -41,7 +43,7 @@ Every page follows the same skeleton:
 <script src="assets/main.js" defer>
 ```
 
-**The nav and footer are duplicated in all 6 files.** There is no templating layer. When you
+**The nav and footer are duplicated in all 7 files.** There is no templating layer. When you
 change a nav link or the footer, edit every page. The current page's nav link carries
 `class="active" aria-current="page"`.
 
@@ -60,7 +62,9 @@ Organized top-to-bottom:
 3. **Components** — `.nav`, `.hero`, `.spectrum` (the chart), `.section`, `.about`, `.pi-*`
    (PI panel), `.cards`/`.card` (research), `.pub-*` (publications), `.member-*`/`.mcard`/
    `.mphoto` (current members), `.alum-meta` (alumni), `.team-tab-*` (the tab switcher),
-   `.news-*`, `.contact-*`, `.pagehead`, `.site-footer`.
+   `.news-*`, `.hl-card`/`.highlight-grid` (highlights), `.gallery`/`.gallery-item`/
+   `.lightbox-*` (figure galleries, shared by publications/news/highlights), `.contact-*`,
+   `.pagehead`, `.site-footer`.
 4. **Reveal** — `[data-reveal]` scroll-in animation.
 5. **Responsive** — breakpoints at 940px (tablet + mobile menu), 820/620/560px.
 6. **Reduced motion** — disables animation for `prefers-reduced-motion`.
@@ -77,6 +81,11 @@ One IIFE, progressive enhancement only. Responsibilities:
 - **Citation chart** — staggers the bar entrance animation (`--i` per bar).
 - **Count-up** — animates the hero metric numbers.
 - **Scroll reveal** — `IntersectionObserver` adds `.in` to cards/rows as they enter view.
+- **Figure-gallery lightbox** — finds every `.gallery` container (publications, news,
+  highlights), intercepts clicks on its `.gallery-item` links, and opens a modal with
+  prev/next across all items in that group. Without JS the links are plain `<a href="…jpg">`
+  and every image is still visible and reachable — see `CONTENT-GUIDE.md` for the markup
+  pattern to copy when adding a new figure or gallery.
 
 All of it is guarded so a page without a given element just skips that feature. With JS off,
 every page's content — including `team.html`'s four tabs and all member/PI/alumni cards — is

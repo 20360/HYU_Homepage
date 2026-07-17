@@ -400,6 +400,91 @@ sub { font-size: .72em; }
 .alum-meta .now { color: var(--navy); font-weight: 600; }
 .join-note { color: var(--ink-mid); font-size: .92rem; margin-top: 1rem; }
 
+/* ---------- Figure galleries (publications / news / highlights) ---------- */
+/* Progressive enhancement: these are plain links to images and work with JS off.
+   main.js intercepts clicks on .gallery-item to open a lightbox with prev/next
+   across every .gallery-item sharing the same .gallery ancestor. */
+.gallery { display: flex; gap: .4rem; flex: 0 0 auto; }
+.gallery-item { position: relative; display: block; flex: 0 0 auto; border-radius: 10px; overflow: hidden; border: 1px solid var(--cream-ring); }
+.gallery-item img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.gallery-item:hover, .gallery-item:focus-visible { border-color: var(--gold); }
+.gallery-badge {
+  position: absolute; right: 4px; bottom: 4px; z-index: 1;
+  font-family: var(--font-mono); font-size: .64rem; font-weight: 700; color: #fff;
+  background: rgba(26,35,50,.72); border-radius: 999px; padding: .1rem .4rem;
+  pointer-events: none;
+}
+
+/* Publications: thumb sits to the right of each entry */
+.pub-thumb { width: 92px; aspect-ratio: 4 / 5; }
+.pub-thumb .gallery-item { width: 100%; height: 100%; }
+.pub .pub-thumb { grid-column: 4; }
+.pub { grid-template-columns: auto 1fr auto auto; }
+.pub-simple li.has-thumb { grid-template-columns: auto 1fr auto; }
+.pub-simple .pub-thumb { width: 76px; align-self: center; }
+
+/* News: thumb sits to the right of each item. First image is the
+   representative one; extra images show as a small filmstrip beside it —
+   real links, visible and clickable without JS, grouped into one lightbox with JS. */
+.news-item.has-gallery { grid-template-columns: 96px 1fr auto; }
+.news-item .news-thumb { align-self: center; }
+.news-item .news-thumb .gallery { align-items: flex-end; }
+.news-item .news-thumb .gallery-item { width: 100px; aspect-ratio: 4 / 3; }
+.news-item .news-thumb .gallery-item:not(:first-child) { width: 40px; }
+
+/* Lightbox */
+.lightbox {
+  position: fixed; inset: 0; z-index: 200; display: grid; place-items: center;
+  background: rgba(15, 19, 28, .88); padding: clamp(1rem, 4vw, 3rem);
+  opacity: 0; pointer-events: none; transition: opacity .22s var(--ease);
+}
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox-figure { position: relative; max-width: min(92vw, 1000px); max-height: 88vh; display: flex; flex-direction: column; align-items: center; gap: .8rem; }
+.lightbox-figure img { max-width: 100%; max-height: 72vh; border-radius: 10px; box-shadow: 0 30px 70px -20px rgba(0,0,0,.6); background: var(--paper); }
+.lightbox-cap { color: var(--on-navy-mid); font-size: .88rem; text-align: center; max-width: 62ch; }
+.lightbox-count { font-family: var(--font-mono); font-size: .72rem; color: var(--on-navy-dim); }
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute; border: 1px solid rgba(250,244,236,.28); background: rgba(26,35,50,.55); color: var(--on-navy);
+  border-radius: 999px; width: 42px; height: 42px; display: grid; place-items: center; font-size: 1.1rem;
+  cursor: pointer; transition: background .2s, border-color .2s;
+}
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover { background: rgba(26,35,50,.85); border-color: var(--gold); }
+.lightbox-close { top: -52px; right: 0; }
+.lightbox-prev { left: -56px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: -56px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 720px) {
+  .lightbox-close { top: -48px; right: 0; }
+  .lightbox-prev { left: 4px; }
+  .lightbox-next { right: 4px; }
+}
+
+/* ---------- Highlights page ---------- */
+.highlight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem 1rem; }
+.hl-card { background: var(--paper); border: 1px solid var(--cream-ring); border-radius: var(--radius); overflow: hidden; transition: transform .28s var(--ease), box-shadow .28s; }
+.hl-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -28px rgba(26,35,50,.4); }
+.hl-card .gallery { display: block; }
+.hl-card .gallery-item { border-radius: 0; border: 0; aspect-ratio: 4 / 3; }
+.hl-card-body { padding: 1rem 1.15rem 1.2rem; }
+.hl-date { display: block; font-family: var(--font-mono); font-size: .72rem; color: var(--gold); margin-bottom: .4rem; }
+.hl-card-body p { font-size: .92rem; color: var(--ink-mid); line-height: 1.5; }
+.hl-card-body strong { color: var(--navy); }
+
+/* ---------- Figure galleries & highlights: responsive (after the components above,
+   so these win over the earlier generic breakpoints at the same widths) ---------- */
+@media (max-width: 940px) {
+  .highlight-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .pub-thumb { grid-column: 2; margin-top: .6rem; width: 76px; }
+  .pub-simple li.has-thumb { grid-template-columns: auto 1fr; }
+  .pub-simple li.has-thumb .pub-thumb { grid-column: 2; margin-top: .5rem; }
+  .news-item.has-gallery { grid-template-columns: 1fr; }
+  .news-item .news-thumb { margin-top: .5rem; }
+  .news-item .news-thumb .gallery-item { width: 120px; }
+  .news-item .news-thumb .gallery-item:not(:first-child) { width: 52px; }
+  .highlight-grid { grid-template-columns: 1fr; }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }

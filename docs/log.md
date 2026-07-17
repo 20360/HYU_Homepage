@@ -46,6 +46,40 @@ Append-only. Newest last.
   JS-rendered markup, so they couldn't be paired directly); 2 of 15 were independently
   cross-checked. See `DATA-SOURCES.md`'s caveat — flag anything that looks mismatched.
 
+## 2026-07-17 — added figures to Publications/News, and a new Highlights page
+
+- **Feedback:** bring the figures that were in the lab homepage's Publication page over to
+  this site's `publications.html` (positioned to the right of each entry, per request), and
+  do the same for News; also import the lab homepage's separate HIGHLIGHTS page (awards,
+  conferences, graduations — distinct from the research/press-coverage News page) as a new
+  page here, with its photos.
+- Captured images via a headless Playwright browser (the homepage's image URLs are
+  token-bound, same constraint as the PI portrait/logo/member photos): 26 publication
+  figures/covers, 13 news photos/figures, and 35 highlights photos. See `DATA-SOURCES.md` for
+  the matching method and its caveats (figure-to-paper matching by verified page position;
+  highlights photos are one-per-entry, not the full carousel).
+- Added a shared **figure-gallery lightbox** (`assets/main.js`, `.gallery`/`.gallery-item`/
+  `.lightbox-*` in `styles.css`): every figure is a plain image link that works with JS off;
+  entries with 2+ related photos (two in `publications.html`'s style is unused so far, but two
+  `news.html` entries — the 2022 and 2021 large-area/world-record perovskite LED items — each
+  group 3 photos) open a popup with prev/next across the group when clicked, modeled on
+  `real.hanyang.ac.kr`'s gallery tab.
+- Added **`highlights.html`** (new 7th page) with 35 dated entries from the lab homepage's
+  Highlights page, translated to English, each with its photo. Added `Highlights` to the
+  shared nav on all 7 pages and updated `CLAUDE.md`, `README.md`, and `docs/` to match.
+
+## 2026-07-18 — fixed two swapped member photos
+
+- **Feedback:** a face/name mismatch was spotted on the Team page — the inferred
+  page-order photo attribution (see `DATA-SOURCES.md`'s caveat) got two pairs wrong.
+- Hyun Do's photo and Eun-Ji Jang's photo were swapped with each other; Hyerin Shin's
+  photo and Seung Hyun Jae's photo were swapped with each other. Fixed by swapping the
+  image bytes back so each filename shows the right face again — no HTML changes needed
+  (`team.html` already pointed at the correct filenames).
+- Re-checked all 15 current-member/collaborator photos against their names' gender as a
+  sanity pass; the other 11 look correctly matched. Updated `DATA-SOURCES.md`'s caveat
+  with this correction.
+
 ## Template for future entries
 
 ```

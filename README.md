@@ -11,8 +11,9 @@ University). No build step, no framework — plain HTML/CSS/JS.
 | `index.html` | Home — hero, lab intro, research at a glance, latest news |
 | `team.html` | Team — PI bio (education, appointments, honors, editorial service), current members, alumni, join-us, in four in-page tabs (CSS-only, no JS) |
 | `research.html` | Research — six directions, each with a detailed section |
-| `publications.html` | Publications — most-cited highlights + full list by year (2026 / 2025 / earlier) |
-| `news.html` | News — press highlights, most recent first |
+| `publications.html` | Publications — most-cited highlights + full list by year (2026 / 2025 / earlier), with figures |
+| `highlights.html` | Highlights — lab life: awards, conferences, graduations, with photos |
+| `news.html` | News — press highlights, most recent first, with photos |
 | `contact.html` | Contact — address, email, phone, join-the-lab |
 
 Shared navigation (with a mobile hamburger menu) and footer appear on every page.
@@ -60,7 +61,11 @@ Everything is pulled from **public sources**, captured **July 2026**:
 - **Bio, education, appointments, honors, research, members, news, recent publications**
   — the lab's public homepage (`sites.google.com/view/yhkimlab`) and its subpages.
 - **Images** (`assets/img/`) — the PI portrait and NREL logo captured from that homepage;
-  member/collaborator portraits (`assets/img/members/`) captured from the homepage's Member page.
+  member/collaborator portraits (`assets/img/members/`) from the homepage's Member page;
+  publication figures (`assets/img/publications/`) from the homepage's Publication page; news
+  photos (`assets/img/news/`) from the homepage's News page; lab-life photos
+  (`assets/img/highlights/`) from the homepage's Highlights page. Entries with 2+ related
+  photos open a lightbox gallery (click any thumbnail) — see `assets/main.js`.
 
 Citation counts and rosters change over time; treat the pages as a July 2026 snapshot.
 
@@ -69,12 +74,15 @@ Citation counts and rosters change over time; treat the pages as a July 2026 sna
 ```
 YH/
   index.html  team.html  research.html  publications.html
-  news.html  contact.html
+  highlights.html  news.html  contact.html
   assets/
     styles.css          # light navy/gold/cream brand theme + multipage nav/footer + team tabs
-    main.js             # mobile menu, chart stagger, count-up, scroll reveal
+    main.js             # mobile menu, chart stagger, count-up, scroll reveal, gallery lightbox
     img/prof-kim.png    # PI portrait
     img/nrel-logo.png   # lab logo
     img/members/        # 15 member & collaborator portraits
+    img/publications/   # 26 publication figures/covers
+    img/news/           # 13 news photos/figures
+    img/highlights/     # 35 lab-life photos
   README.md
 ```
