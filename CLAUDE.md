@@ -82,10 +82,10 @@ docs/              Documentation (this guide's deeper references) + docs/index.h
 
 ## The signature
 
-The home hero's **citation-emission spectrum** is the identity of the site: annual citations
-rendered as a glowing perovskite-style bar chart (violet → red), because the lab's most-cited
-work is multicolor perovskite LEDs. Keep it. Bar heights are `--h` (value ÷ max) and colors
-are `--c`, set inline in `index.html`.
+The **citation-emission spectrum** is the identity of the site: annual citations rendered as a
+glowing perovskite-style bar chart (violet → red), because the lab's most-cited work is
+multicolor perovskite LEDs. Keep it. It lives top-right of the `publications.html` pagehead.
+Bar heights are `--h` (value ÷ max) and colors are `--c`, set inline in `publications.html`.
 
 ## How to edit content
 

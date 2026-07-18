@@ -161,7 +161,7 @@ caption to the new date.
 
 ## Update the citation chart
 
-Open `index.html`, block `#spectrum-bars`. Each bar:
+Open `publications.html`, block `#spectrum-bars` (top-right of the pagehead). Each bar:
 
 ```html
 <div class="bar" style="--h:.878;--c:#5cbf55" data-year="2021" data-val="1789"></div>

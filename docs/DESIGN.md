@@ -34,9 +34,10 @@ the citation-chart bars (the emission spectrum).
 
 ## The signature — citation-emission spectrum
 
-On the home hero: annual citations (2015–2026) as vertical bars, colored across the spectrum
-cool→warm, with a soft glow, sitting on the navy hero. The current partial year is hatched and
-dimmed. This is the memorable element; keep it and keep it honest (label the partial year).
+In the Publications page header (top-right of the navy pagehead): annual citations
+(2015–2026) as vertical bars, colored across the spectrum cool→warm, with a soft glow. The
+current partial year is hatched and dimmed. This is the memorable element; keep it and keep it
+honest (label the partial year).
 
 ## Layout
 

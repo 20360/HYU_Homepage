@@ -126,8 +126,8 @@ sub { font-size: .72em; }
 .hero { background: linear-gradient(160deg, var(--navy-light), var(--navy) 55%, var(--navy-dark)); color: var(--on-navy); }
 .hero-inner {
   max-width: var(--maxw); margin: 0 auto; padding: clamp(3rem, 6vw, 4.5rem) var(--pad);
-  display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 4rem); align-items: center;
 }
+.hero-copy { max-width: 62ch; }
 .hero-copy .eyebrow { display: block; margin-bottom: 1.2rem; }
 #hero-title {
   font-size: clamp(1.9rem, 4.2vw, 3.1rem); font-weight: 800; line-height: 1.12;
@@ -286,6 +286,11 @@ sub { font-size: .72em; }
 .pagehead-metrics .metric-value { color: var(--on-navy); }
 .pagehead-metrics .metric-label { color: var(--on-navy-dim); }
 
+.pagehead-split {
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 4rem); align-items: center;
+}
+.pagehead-split .spectrum { justify-self: end; width: 100%; }
+
 /* first section after a pagehead keeps comfortable rhythm */
 .pagehead + main .section:first-child { padding-top: clamp(2.8rem, 5vw, 4rem); }
 
@@ -337,8 +342,7 @@ sub { font-size: .72em; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 940px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .spectrum { order: 2; }
+  .pagehead-split { grid-template-columns: 1fr; }
   .about-body { grid-template-columns: 1fr; }
   .pi-body { grid-template-columns: 1fr; }
   .pi-figure { position: static; max-width: 300px; }
