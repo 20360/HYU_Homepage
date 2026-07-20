@@ -116,6 +116,24 @@ Append-only. Newest last.
   Oh's and two of Lee's contributions cross-check against existing `publications.html` entries.
 - Updated `CONTENT-GUIDE.md`'s "Add an alumnus" recipe and `DATA-SOURCES.md` to match.
 
+## 2026-07-18 — fixed swapped news photos, moved the citation spectrum, added a Research figure
+
+- **Feedback:** the top two `news.html` entries ("2026 RSC Prize" and "Sang Woo Bae") had each
+  other's photo. Swapped the image bytes back so filenames match content; the RSC Prize entry
+  was then given the real CHOISE-team group photo the user provided (converted PNG → JPEG into
+  `news-2026-rsc-prize.jpg`).
+- **Feedback:** move the home-hero citation-emission spectrum chart to the top-right of
+  `publications.html`'s pagehead instead (`.pagehead-split`/`.pagehead-copy` grid, mirrors the
+  old `.hero-inner` two-column layout). `index.html`'s hero is now copy-only, single column.
+  Updated `CLAUDE.md` and `DESIGN.md`'s "signature" section to point at the new location.
+- **Feedback:** to help recruit Korean grad students, add a real research figure to
+  `research.html` (previously text-only) for the "LEDs & displays" section. The user provided
+  the lab's own "OLEDs & Emerging LEDs" research-summary slide directly (not scraped) — used it
+  as-is (color/contrast lightly enhanced), saved to `assets/img/research/rs-oled-emerging-led.png`,
+  and added as a `.research-figure` (reuses `.gallery`/`.gallery-item` for the click-to-enlarge
+  lightbox, styled like `.pi-figure`). Two more slides (Patterning; Spin optoelectronics) were
+  provided at the same time for other sections but not yet placed. See `DATA-SOURCES.md`.
+
 ## Template for future entries
 
 ```

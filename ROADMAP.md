@@ -22,15 +22,20 @@ ships as a complete 6-page site.
   never paraphrase a title. Figures for papers 58–113 are already captured in
   `assets/img/publications/` if you extend the list into that range.
 
-## 2. Research figures
+## 2. Research figures — 🟡 started (2026-07-18)
 
-- **Why:** The Research page is text-only. The lab's research page has schematic figures
+- **Why:** The Research page was text-only. The lab's research page has schematic figures
   (device stacks, CISS diagrams, catalysis cells) that would make each direction concrete.
-- **How:** The figure image URLs are on `.../research`. Capture them the same way the PI
-  portrait and logo were captured (render the page, screenshot the `<img>` element — the
-  `sitesv-images-rt` URLs are token-bound and won't `curl`). Save to `assets/img/`, optimize,
-  add with descriptive `alt` text and captions. Respect the source — these are the lab's own
-  figures; keep them credited and only for this showcase.
+- **Done:** "LEDs & displays" (`#leds`) now has a `.research-figure` — the PI provided the
+  lab's own "OLEDs & Emerging LEDs" research-summary slide directly (`rs-oled-emerging-led.png`).
+- **Still open:** the other 5 directions (Solar cells, Chirality & spin, Catalysis, Colloidal
+  nanocrystals, Battery electrolytes). Two more provided slides (Patterning; Spin
+  optoelectronics) look like natural fits for Colloidal nanocrystals and Chirality & spin
+  respectively — confirm with the PI, then add the same way. For any not covered by a provided
+  slide, the figure image URLs are on `.../research`; capture them the same way the PI portrait
+  and logo were captured (render the page, screenshot the `<img>` element — the
+  `sitesv-images-rt` URLs are token-bound and won't `curl`). Respect the source either way —
+  these are the lab's own figures; keep them credited and only for this showcase.
 
 ## 3. Member photos — ✅ done (2026-07-16)
 

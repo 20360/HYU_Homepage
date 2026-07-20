@@ -17,6 +17,22 @@
 <body id="top">
   <div class="gold-rule" aria-hidden="true"></div>
 
+  <!-- Recruiting popup: progressive enhancement — this same "Join the lab" content
+       lives permanently on contact.html#join; JS just surfaces it on load here. -->
+  <div class="join-popup" id="join-popup">
+    <div class="join-popup-card" role="dialog" aria-modal="true" aria-labelledby="join-popup-title">
+      <button type="button" class="join-popup-close" aria-label="닫기">&#10005;</button>
+      <p class="join-popup-eyebrow">모집 안내 · Now Recruiting</p>
+      <h2 id="join-popup-title">연구실 합류하기</h2>
+      <p class="join-popup-body">
+        에너지·소재·화학·전자공학, 물리학, 화학 분야의 우수한 연구자를 찾고 있습니다.
+        적층형 광반도체 소자, CO<sub>2</sub>/H<sub>2</sub> 촉매, 친환경 반도체 공정(CMP) 등
+        연구실의 방향에 관심 있는 대학원생·포닥을 상시 모집합니다.
+      </p>
+      <a class="join-popup-cta" href="contact.html#join">자세히 보기 &rarr;</a>
+    </div>
+  </div>
+
   <header class="nav" id="nav">
     <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="NREL Lab home">
@@ -80,22 +96,35 @@
           <a class="home-cta" href="research.html" style="margin-top:1.2rem;">Explore our research &rarr;</a>
         </p>
       </div>
+      <div class="about-divider" aria-hidden="true"><span>한국어</span></div>
+      <div class="about-body about-body-ko" lang="ko">
+        <p class="lead">
+          NREL 연구실은 합성 분자 화학의 원리를 바탕으로 고체 상태(solid-state materials)의 다양한
+          하이브리드 반도체 및 광반도체(Optical Semiconductor) 소재를 설계 및 합성하고 있습니다.
+        </p>
+        <p>
+          이러한 소재 개발을 통해 적층형 광반도체 기반 광-전자소자(광통신, 디스플레이, 태양전지, 광센서)
+          및 에너지소자(CO<sub>2</sub> reduction, H<sub>2</sub> evolution) 응용 분야에 적용하고자 합니다.
+          또한, 이차전지 전해액(LIBs)을 추출/분석하여 공정 및 구동 단계에서의 부반응을 예측하고 노화
+          메커니즘을 분석합니다.
+        </p>
+      </div>
     </section>
 
     <!-- Research at a glance -->
     <section class="section research glance" aria-labelledby="glance-title">
       <div class="section-head">
         <span class="section-kicker">Research at a glance</span>
-        <h2 id="glance-title">Six directions, one thread</h2>
+        <h2 id="glance-title">Research field</h2>
         <p class="section-note">The fundamentals of spin–charge–light interconversion, applied across optoelectronics, catalysis, and energy materials.</p>
       </div>
       <div class="cards">
-        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">01</span><h3>Light-emitting diodes &amp; displays</h3><p>Perovskite, nanocrystal, and organic LEDs for wide-gamut displays and CPL emitters.</p></article></a>
-        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">02</span><h3>Solar cells &amp; photodetectors</h3><p>Harvesting light with the same absorbers — plus robot- and AI-driven high-throughput fabrication.</p></article></a>
-        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">03</span><h3>Chirality &amp; spin</h3><p>Chiral-induced spin selectivity for room-temperature spin-LEDs, CPL detectors, and spin-catalysis.</p></article></a>
-        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">04</span><h3>Catalysis — CO<sub>2</sub> &amp; H<sub>2</sub></h3><p>Photo- and electro-catalysts that convert CO<sub>2</sub> to fuels and split water for green hydrogen.</p></article></a>
-        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">05</span><h3>Colloidal nanocrystals</h3><p>Ligand and crystal engineering of luminescent nanocrystals for brighter, more stable emission.</p></article></a>
-        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">06</span><h3>Battery electrolytes</h3><p>Quantitative extraction and analysis of Li-ion electrolytes to reveal aging mechanisms.</p></article></a>
+        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">01</span><h3>Solid-state semiconductors</h3><p>Designing and synthesizing hybrid and optical semiconductor materials — the shared foundation for every direction below.</p></article></a>
+        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">02</span><h3>Light-emitting diodes &amp; displays</h3><p>Perovskite, nanocrystal, and organic LEDs for wide-gamut displays and CPL emitters.</p></article></a>
+        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">03</span><h3>Solar cells &amp; photodetectors</h3><p>Harvesting light with the same absorbers — plus robot- and AI-driven high-throughput fabrication.</p></article></a>
+        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">04</span><h3>Chirality &amp; spin</h3><p>Chiral-induced spin selectivity for room-temperature spin-LEDs, CPL detectors, and spin-catalysis.</p></article></a>
+        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">05</span><h3>Catalysis — CO<sub>2</sub> &amp; H<sub>2</sub></h3><p>Photo- and electro-catalysts that convert CO<sub>2</sub> to fuels and split water for green hydrogen.</p></article></a>
+        <a class="glance-link" href="research.html"><article class="card"><span class="card-num">06</span><h3>CMP &amp; battery electrolyte processing</h3><p>Eco-friendly semiconductor CMP slurries and quantitative Li-ion electrolyte analysis for aging mechanisms.</p></article></a>
       </div>
     </section>
 

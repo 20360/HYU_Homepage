@@ -135,4 +135,27 @@
       else if (e.key === 'ArrowRight') step(1);
     });
   }
+
+  /* ---- Home page: recruiting popup ----
+     The same "Join the lab" content lives permanently on contact.html#join;
+     this just surfaces it once per session. Only runs where #join-popup exists. */
+  const joinPopup = document.getElementById('join-popup');
+  if (joinPopup) {
+    const closePopup = () => {
+      joinPopup.classList.remove('open');
+      document.body.style.overflow = '';
+      sessionStorage.setItem('joinPopupSeen', '1');
+    };
+    joinPopup.querySelector('.join-popup-close').addEventListener('click', closePopup);
+    joinPopup.addEventListener('click', (e) => { if (e.target === joinPopup) closePopup(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && joinPopup.classList.contains('open')) closePopup();
+    });
+    if (!sessionStorage.getItem('joinPopupSeen')) {
+      setTimeout(() => {
+        joinPopup.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }, 900);
+    }
+  }
 })();
