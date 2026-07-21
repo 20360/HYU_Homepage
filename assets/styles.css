@@ -190,6 +190,22 @@ sub { font-size: .72em; }
 }
 .about-body-ko .lead { color: var(--navy); }
 
+/* ---------- Bilingual (KO) glosses — research.html ---------- */
+.lang-ko { color: var(--ink-dim); }
+.section-head h2 .lang-ko, .card h3 .lang-ko, #cmp-battery h3 .lang-ko {
+  display: block; font-size: .58em; font-weight: 600; letter-spacing: 0;
+  text-transform: none; color: var(--ink-dim); margin-top: .3rem;
+}
+.section-kicker .lang-ko { font-weight: 500; text-transform: none; letter-spacing: 0; margin-left: .4em; }
+.eyebrow .lang-ko { font-weight: 500; text-transform: none; letter-spacing: 0; margin-left: .4em; }
+.card-ko {
+  margin-top: .6rem; padding-top: .55rem; border-top: 1px dashed var(--cream-ring);
+  font-size: .88rem; line-height: 1.55; color: var(--ink-dim);
+}
+.card-ko strong { color: var(--ink-mid); }
+.pagehead-sub-ko { margin-top: .7rem; max-width: 62ch; font-size: .95rem; color: var(--on-navy-dim); }
+.pagehead-sub-ko strong { color: var(--on-navy-mid); }
+
 /* ---------- Research page — topic figure ---------- */
 .research-figure { margin-top: 2rem; }
 .research-figure.gallery { display: block; }
@@ -290,6 +306,9 @@ a.venue:active { transform: scale(.97); }
 .news-item p { color: var(--ink-mid); }
 .news-item strong { color: var(--navy); font-weight: 700; }
 .news-item em { font-style: italic; }
+.news-item p a { color: var(--gold); text-decoration: underline; text-decoration-color: var(--cream-ring); text-underline-offset: 2px; }
+.news-item p a:hover { text-decoration-color: var(--gold); }
+.news-item p a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
 
 /* ---------- Contact / footer (navy) ---------- */
 .contact { margin-top: clamp(4rem, 8vw, 6.5rem); background: linear-gradient(160deg, var(--navy-light), var(--navy-dark)); color: var(--on-navy); border-top: 3px solid var(--gold); }
@@ -342,6 +361,9 @@ a.venue:active { transform: scale(.97); }
 .newsprev-item .news-date { display: block; margin-bottom: .6rem; }
 .newsprev-item p { color: var(--ink-mid); font-size: .95rem; }
 .newsprev-item strong { color: var(--navy); }
+
+.video-embed { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--cream-ring); background: var(--navy); }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 /* ---------- Shared site footer (all pages) ---------- */
 .site-footer { margin-top: clamp(3.5rem, 7vw, 5.5rem); background: linear-gradient(160deg, var(--navy-light), var(--navy-dark)); color: var(--on-navy); border-top: 3px solid var(--gold); }
