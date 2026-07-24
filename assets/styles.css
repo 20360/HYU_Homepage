@@ -221,13 +221,13 @@ sub { font-size: .72em; }
 .research-figcap { margin-top: .8rem; font-size: .9rem; color: var(--ink-mid); }
 
 /* ---------- Research page — figure-left topic layout ---------- */
-.research-body-figure { display: grid; grid-template-columns: 300px 1fr; gap: clamp(1.8rem, 4vw, 3rem); align-items: center; }
+.research-body-figure { display: grid; grid-template-columns: minmax(380px, 640px) 1fr; gap: clamp(1.8rem, 4vw, 3rem); align-items: center; }
 .research-body-figure .research-figure { margin-top: 0; position: sticky; top: 90px; }
 .research-body-figure .research-figure-text { font-size: 1.05rem; color: var(--navy); line-height: 1.7; }
 .research-body-figure .research-figure-text .lead { font-size: 1.1rem; margin-bottom: .8rem; }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .research-body-figure { grid-template-columns: 1fr; }
-  .research-body-figure .research-figure { position: static; max-width: 300px; }
+  .research-body-figure .research-figure { position: static; max-width: 640px; }
 }
 
 /* ---------- PI ---------- */
