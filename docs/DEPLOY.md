@@ -20,6 +20,27 @@ Use a server (not `file://`) so the `docs/` markdown viewer and CDN fonts behave
 4. If the site lives in a subpath, all asset links are already **relative** (`assets/…`,
    `team.html`), so no base-path changes are needed.
 
+This site is currently deployed this way, live at `https://20360.github.io/HYU_Homepage/`.
+
+## Custom domain: nrel.hanyang.ac.kr
+
+The repo root has a `CNAME` file containing `nrel.hanyang.ac.kr`, which is GitHub Pages'
+mechanism for custom domains. Two more steps are needed outside this repo to finish
+connecting it — both one-time, done in the GitHub UI and the university's DNS panel:
+
+1. **DNS** — whoever manages DNS for `hanyang.ac.kr` (university IT/network team) needs to
+   add a **CNAME record**:
+   - Host: `nrel`
+   - Points to: `20360.github.io`
+   - (Subdomains use a CNAME record, not an A record — A records are only for apex domains.)
+2. **GitHub repo settings** — Settings → Pages → Custom domain → enter `nrel.hanyang.ac.kr` →
+   Save. GitHub re-checks the DNS record (can take a few minutes to 24h to propagate) and
+   then offers **Enforce HTTPS** — turn that on once the check passes so the site gets a
+   free auto-renewed TLS cert.
+
+Until the DNS record exists and GitHub's check passes, `nrel.hanyang.ac.kr` won't resolve —
+the `https://20360.github.io/HYU_Homepage/` URL keeps working in the meantime.
+
 ## Netlify / Vercel (drag-and-drop)
 
 - Netlify: drag the `YH` folder onto the Netlify "Sites" drop zone. Done.
