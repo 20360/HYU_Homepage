@@ -521,8 +521,8 @@ a.venue:active { transform: scale(.97); }
 .pub-thumb .gallery-item { width: 100%; height: 100%; }
 .pub .pub-thumb { grid-column: 4; }
 .pub { grid-template-columns: auto 1fr auto auto; }
-.pub-simple li.has-thumb { grid-template-columns: auto 1fr auto; align-items: center; }
-.pub-simple .pub-thumb { width: 200px; aspect-ratio: 4 / 3; align-self: center; }
+.pub-simple li.has-thumb { grid-template-columns: auto 1fr auto; align-items: start; }
+.pub-simple .pub-thumb { width: 200px; aspect-ratio: 4 / 3; align-self: start; }
 
 /* News: thumb sits to the right of each item. First image is the
    representative one; extra images show as a small filmstrip beside it —
