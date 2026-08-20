@@ -21,19 +21,19 @@ showcase site, not the official lab site. Numbers drift — keep this table and 
 | Lab homepage — highlights photos | `/highlights` | 35 photos in `assets/img/highlights/`, captured 2026-07-17 (one representative photo per dated entry; entries with dot-carousels on the source page may have more photos than were captured) |
 | Provided directly by the PI/lab (not scraped) | own research-summary slide | `assets/img/research/rs-oled-emerging-led.png`, added 2026-07-18: the lab's own "OLEDs & Emerging LEDs" figure (device structure, fabrication process, and glowing perovskite/OLED/carbon-dot LED photos), shown in `research.html`'s "LEDs & displays" section. Color/contrast lightly enhanced for the showcase; content unchanged. Two more research-summary slides (Patterning; Spin optoelectronics) were provided at the same time but not yet placed — see `ROADMAP.md`. |
 
-## Key figures (as of July 2026)
+## Key figures (citations/h-index/i10-index refreshed August 2026; publication count/most-cited paper still July 2026)
 
 | Metric | Value |
 |--------|-------|
-| Total citations | 16,187 |
+| Total citations | 16,427 |
 | h-index | 49 |
-| i10-index | 88 |
+| i10-index | 90 |
 | Publications | 116 |
 | Most-cited paper | *Science* 2015, "Overcoming the electroluminescence efficiency limitations of perovskite LEDs" — 3,256 citations |
 
-Per-year citations used in the chart: 2015: 156 · 2016: 454 · 2017: 849 · 2018: 1,239 ·
-2019: 1,362 · 2020: 1,406 · 2021: 1,789 · 2022: 1,928 · 2023: 1,935 · 2024: 1,922 ·
-2025: 2,038 · 2026: 1,045 (**partial / year-to-date**).
+Per-year citations used in the chart: 2015: 154 · 2016: 452 · 2017: 848 · 2018: 1,215 ·
+2019: 1,367 · 2020: 1,440 · 2021: 1,782 · 2022: 1,941 · 2023: 1,913 · 2024: 1,925 ·
+2025: 2,031 · 2026: 1,256 (**partial / year-to-date**).
 
 ## PI facts (from the lab homepage)
 

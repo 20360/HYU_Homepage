@@ -57,7 +57,7 @@ Everything is pulled from **public sources**, captured **July 2026**:
 
 - **Metrics & most-cited papers** — the public Google Scholar profile
   ([`user=Je20irEAAAAJ`](https://scholar.google.com/citations?user=Je20irEAAAAJ&hl=en)):
-  16,187 citations, h-index 49, i10-index 88, and the per-year citation series.
+  16,427 citations (refreshed August 2026), h-index 49, i10-index 90, and the per-year citation series.
 - **Bio, education, appointments, honors, research, members, news, recent publications**
   — the lab's public homepage (`sites.google.com/view/yhkimlab`) and its subpages.
 - **Images** (`assets/img/`) — the PI portrait and NREL logo captured from that homepage;

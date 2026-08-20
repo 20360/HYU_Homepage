@@ -98,7 +98,7 @@ still fully present and operable (see the `.team-tab-*` note above).
   `#panel-members`; alumni in `#panel-alumni`.
 - **Citation chart values** are inline on the bars in `index.html` (`--h` height ratio,
   `--c` color, `data-val` label).
-- **Metrics (16,187 / 49 / 88 / 116)** appear as literal text in several pages — search and
+- **Metrics (16,427 / 49 / 90 / 117)** appear as literal text in several pages — search and
   replace across files when refreshing (see `CONTENT-GUIDE.md`).
 
 Provenance for all of it: `DATA-SOURCES.md`.
