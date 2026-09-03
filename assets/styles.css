@@ -318,7 +318,7 @@ a.venue:active { transform: scale(.97); }
 .mrole { display: block; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-dim); margin-top: .25rem; }
 .mint { font-size: .86rem; color: var(--ink-mid); }
 .mint-label { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: .15rem; }
-.mfund { display: inline-block; margin-top: .35rem; font-family: var(--font-mono); font-size: .58rem; letter-spacing: .04em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--cream-ring); border-radius: 999px; padding: .15rem .55rem; background: var(--cream); }
+.mfund { margin-top: .3rem; font-family: var(--font-mono); font-size: .68rem; color: var(--gold); }
 
 /* ---------- News ---------- */
 .news-list { list-style: none; }
