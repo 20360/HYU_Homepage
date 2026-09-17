@@ -218,16 +218,24 @@ sub { font-size: .72em; }
 .research-figure.gallery-row .gallery-item { flex: 1 1 0; aspect-ratio: 4 / 3; }
 .research-figure .gallery-item img { width: 100%; height: auto; display: block; }
 .research-figure.gallery-row .gallery-item img { height: 100%; object-fit: cover; }
+.research-figure.gallery-row .research-figure-video {
+  flex: 1 1 0; aspect-ratio: 4 / 3; border-radius: var(--radius);
+  border: 1px solid var(--cream-ring); overflow: hidden;
+  box-shadow: 0 20px 50px -28px rgba(26,35,50,.4);
+}
+.research-figure-video iframe { width: 100%; height: 100%; border: 0; display: block; }
 .research-figcap { margin-top: .8rem; font-size: .9rem; color: var(--ink-mid); }
+#catalysis .research-figure .gallery-item { aspect-ratio: 4 / 3; background: var(--paper); }
+#catalysis .research-figure .gallery-item img { height: 100%; object-fit: contain; }
 
 /* ---------- Research page — figure-left topic layout ---------- */
-.research-body-figure { display: grid; grid-template-columns: 300px 1fr; gap: clamp(1.8rem, 4vw, 3rem); align-items: center; }
+.research-body-figure { display: grid; grid-template-columns: minmax(380px, 640px) 1fr; gap: clamp(1.8rem, 4vw, 3rem); align-items: center; }
 .research-body-figure .research-figure { margin-top: 0; position: sticky; top: 90px; }
 .research-body-figure .research-figure-text { font-size: 1.05rem; color: var(--navy); line-height: 1.7; }
 .research-body-figure .research-figure-text .lead { font-size: 1.1rem; margin-bottom: .8rem; }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .research-body-figure { grid-template-columns: 1fr; }
-  .research-body-figure .research-figure { position: static; max-width: 300px; }
+  .research-body-figure .research-figure { position: static; max-width: 640px; }
 }
 
 /* ---------- PI ---------- */
@@ -270,9 +278,9 @@ sub { font-size: .72em; }
 .card:hover { transform: translateY(-5px); box-shadow: 0 22px 50px -30px rgba(26,35,50,.45); border-color: var(--gold); }
 
 /* ---------- Publications ---------- */
-.hl-strip { display: flex; gap: .7rem; overflow-x: auto; padding-bottom: .3rem; }
+.hl-strip { display: grid; grid-template-columns: repeat(8, 1fr); gap: 1rem; }
 .hl-strip a {
-  display: block; flex: 0 0 auto; width: 88px; aspect-ratio: 4 / 5; border-radius: 8px;
+  display: block; width: 100%; aspect-ratio: 4 / 5; border-radius: 8px;
   overflow: hidden; border: 1px solid var(--cream-ring);
   box-shadow: 0 12px 28px -16px rgba(26,35,50,.4);
   transition: transform .2s var(--ease), border-color .2s;
@@ -310,6 +318,7 @@ a.venue:active { transform: scale(.97); }
 .mrole { display: block; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-dim); margin-top: .25rem; }
 .mint { font-size: .86rem; color: var(--ink-mid); }
 .mint-label { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: .15rem; }
+.mfund { margin-top: .3rem; font-family: var(--font-mono); font-size: .68rem; color: var(--gold); }
 
 /* ---------- News ---------- */
 .news-list { list-style: none; }
@@ -482,6 +491,9 @@ a.venue:active { transform: scale(.97); }
 .mphoto-wrap:hover .mreveal, .mphoto-wrap:focus-visible .mreveal, .mphoto-wrap:focus-within .mreveal { opacity: 1; }
 .mreveal-line { font-size: .76rem; line-height: 1.4; color: var(--cream); }
 .mreveal-label { display: block; font-family: var(--font-mono); font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; color: #c8a877; margin-bottom: .12rem; }
+.mreveal-mail { color: var(--cream); text-decoration: underline; text-decoration-color: rgba(250, 244, 236, .4); text-underline-offset: 2px; word-break: break-all; }
+.mreveal-mail:hover, .mreveal-mail:focus-visible { color: #c8a877; text-decoration-color: #c8a877; }
+.mreveal-mail:focus-visible { outline: 2px solid var(--cream); outline-offset: 2px; }
 .member-group { margin-bottom: clamp(2.4rem, 5vw, 3.4rem); }
 .member-group:last-child { margin-bottom: 0; }
 .member-group h3 { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
@@ -518,8 +530,8 @@ a.venue:active { transform: scale(.97); }
 .pub-thumb .gallery-item { width: 100%; height: 100%; }
 .pub .pub-thumb { grid-column: 4; }
 .pub { grid-template-columns: auto 1fr auto auto; }
-.pub-simple li.has-thumb { grid-template-columns: auto 1fr auto; align-items: center; }
-.pub-simple .pub-thumb { width: 120px; aspect-ratio: 4 / 3; align-self: center; }
+.pub-simple li.has-thumb { grid-template-columns: auto 1fr auto; align-items: start; }
+.pub-simple .pub-thumb { width: 200px; aspect-ratio: 4 / 3; align-self: start; }
 
 /* News: thumb sits to the right of each item. First image is the
    representative one; extra images show as a small filmstrip beside it —
@@ -585,8 +597,13 @@ a.venue:active { transform: scale(.97); }
 .highlight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem 1rem; }
 .hl-card { background: var(--paper); border: 1px solid var(--cream-ring); border-radius: var(--radius); overflow: hidden; transition: transform .28s var(--ease), box-shadow .28s; }
 .hl-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -28px rgba(26,35,50,.4); }
-.hl-card .gallery { display: block; }
+.hl-card .gallery { display: flex; flex-direction: column; gap: .3rem; }
 .hl-card .gallery-item { border-radius: 0; border: 0; aspect-ratio: 4 / 3; }
+/* Cards with more than one photo: cover image on top, the rest as a small
+   filmstrip below — real links, visible and clickable without JS, grouped
+   into one lightbox (cover, then filmstrip left-to-right) with JS. */
+.hl-gallery-extra { display: flex; gap: .3rem; padding: 0 .5rem; }
+.hl-card .hl-gallery-extra .gallery-item { flex: 1 1 0; aspect-ratio: auto; height: 64px; border-radius: 6px; border: 1px solid var(--cream-ring); }
 .hl-card-body { padding: 1rem 1.15rem 1.2rem; }
 .hl-date { display: block; font-family: var(--font-mono); font-size: .72rem; color: var(--gold); margin-bottom: .4rem; }
 .hl-card-body p { font-size: .92rem; color: var(--ink-mid); line-height: 1.5; }
@@ -596,11 +613,13 @@ a.venue:active { transform: scale(.97); }
    so these win over the earlier generic breakpoints at the same widths) ---------- */
 @media (max-width: 940px) {
   .highlight-grid { grid-template-columns: repeat(2, 1fr); }
+  .hl-strip { grid-template-columns: repeat(4, 1fr); }
 }
 @media (max-width: 620px) {
+  .hl-strip { grid-template-columns: repeat(3, 1fr); }
   .pub-thumb { grid-column: 2; margin-top: .6rem; }
   .pub-simple li.has-thumb { grid-template-columns: auto 1fr; }
-  .pub-simple li.has-thumb .pub-thumb { grid-column: 2; margin-top: .5rem; width: 100px; }
+  .pub-simple li.has-thumb .pub-thumb { grid-column: 2; margin-top: .5rem; width: 160px; }
   .news-item.has-gallery { grid-template-columns: 1fr; }
   .news-item .news-thumb { margin-top: .5rem; }
   .news-item .news-thumb .gallery-item { width: 120px; }

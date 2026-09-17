@@ -151,10 +151,10 @@ Two places (keep them consistent):
 
 These numbers are **literal text in several files**. Update all occurrences:
 
-- `16,187` (citations) — `index.html`, `team.html`, `publications.html`
+- `16,427` (citations) — `index.html`, `team.html`, `publications.html`
 - `49` (h-index) — same three
-- `88` (i10-index) — `team.html`, `publications.html`
-- `116` (publications) — `index.html`, `publications.html` (title + metric)
+- `90` (i10-index) — `team.html`, `publications.html`
+- `117` (publications) — `index.html`, `publications.html` (title + metric)
 
 Grep for each number to catch every spot. Then update any "Source: Google Scholar, July 2026"
 caption to the new date.
@@ -164,10 +164,10 @@ caption to the new date.
 Open `publications.html`, block `#spectrum-bars` (top-right of the pagehead). Each bar:
 
 ```html
-<div class="bar" style="--h:.878;--c:#5cbf55" data-year="2021" data-val="1789"></div>
+<div class="bar" style="--h:.877;--c:#5cbf55" data-year="2021" data-val="1782"></div>
 ```
 
-- `--h` = that year's citations ÷ the max year's citations (currently max = 2038 in 2025).
+- `--h` = that year's citations ÷ the max year's citations (currently max = 2031 in 2025).
 - `--c` = the bar color; keep the violet→red spectrum sweep across years.
 - `data-val` = the raw number shown on hover.
 - Mark an incomplete current year with `class="bar partial"` and note it in the caption.
